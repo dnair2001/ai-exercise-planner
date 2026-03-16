@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-from: #667eea;
+  --brand-to: #764ba2;
+}
+
+.btn-brand {
+  @apply bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white font-semibold py-3 px-8 rounded-xl hover:opacity-90 transition-opacity;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-gray-100 p-6;
+}
