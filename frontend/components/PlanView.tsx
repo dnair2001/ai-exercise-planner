@@ -51,12 +51,24 @@ function DayCard({ day, isToday, isPast }: { day: WorkoutDay; isToday: boolean; 
             <div key={i} className="flex gap-2 text-sm">
               <span className="text-purple-400 shrink-0">•</span>
               <div>
-                <span className="font-medium">{ex.name}</span>
-                {ex.sets && ex.reps && (
-                  <span className="text-gray-400 ml-1">
-                    — {ex.sets} × {ex.reps}
-                  </span>
-                )}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="font-medium">{ex.name}</span>
+                  {ex.sets && ex.reps && (
+                    <span className="text-gray-400">
+                      — {ex.sets} × {ex.reps}
+                    </span>
+                  )}
+                  {ex.youtube_search_query && (
+                    <a
+                      href={`https://www.youtube.com/results?search_query=${encodeURIComponent(ex.youtube_search_query)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-red-500 hover:text-red-600 font-medium flex items-center gap-0.5"
+                    >
+                      ▶ Watch
+                    </a>
+                  )}
+                </div>
                 {ex.notes && (
                   <p className="text-xs text-gray-400 mt-0.5">{ex.notes}</p>
                 )}

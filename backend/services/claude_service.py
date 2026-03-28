@@ -30,8 +30,9 @@ PLAN_SCHEMA = {
                                 "sets": {"type": "integer"},
                                 "reps": {"type": "string"},
                                 "notes": {"type": "string"},
+                                "youtube_search_query": {"type": "string"},
                             },
-                            "required": ["name"],
+                            "required": ["name", "youtube_search_query"],
                             "additionalProperties": False,
                         },
                     },
@@ -56,6 +57,7 @@ Create realistic, progressive workout plans that:
 - Include proper rest days
 - Are achievable within the specified duration
 - Include clear exercise instructions in the notes field
+- For each exercise, provide a concise youtube_search_query (e.g. "how to do a barbell squat tutorial") so users can find a follow-along video
 
 Return your response as valid JSON matching the provided schema exactly."""
 

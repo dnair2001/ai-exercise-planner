@@ -12,6 +12,7 @@ export interface Exercise {
   sets?: number;
   reps?: string;
   notes?: string;
+  youtube_search_query?: string;
 }
 
 export interface WorkoutDay {
