@@ -140,7 +140,8 @@ async def google_callback(code: str, response: Response, db: Session = Depends(g
         key="access_token",
         value=jwt_token,
         httponly=True,
-        samesite="lax",
+        samesite="none",
+        secure=True,
         max_age=JWT_EXPIRE_DAYS * 24 * 3600,
     )
     return redirect_response
@@ -158,5 +159,5 @@ def get_me(current_user: User = Depends(get_current_user)):
 
 @router.post("/logout")
 def logout(response: Response):
-    response.delete_cookie("access_token")
+    response.delete_cookie("access_token", samesite="none", secure=True)
     return {"message": "Logged out"}
