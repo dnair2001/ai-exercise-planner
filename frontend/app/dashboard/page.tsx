@@ -112,7 +112,7 @@ export default function DashboardPage() {
           </div>
         ) : (
           <div>
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <h1 className="text-2xl font-bold">Your Workout Plan</h1>
               <div className="flex items-center gap-4">
                 <button
