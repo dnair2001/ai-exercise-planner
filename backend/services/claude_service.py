@@ -90,6 +90,7 @@ Please create a comprehensive, realistic plan for all {duration_days} days."""
 
     full_text = ""
 
+    # actual API call happening here
     async with client.messages.stream(
         model="claude-sonnet-4-6",
         max_tokens=8192,

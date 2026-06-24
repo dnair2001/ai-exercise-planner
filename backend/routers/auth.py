@@ -64,7 +64,7 @@ def get_current_user(
         raise HTTPException(status_code=404, detail="User not found")
     return user
 
-
+# builds Google Oauth URL with 5 scopes 
 @router.get("/google")
 def google_login():
     params = {
@@ -80,6 +80,7 @@ def google_login():
     return RedirectResponse(url=url)
 
 
+# called once user approves on google
 @router.get("/callback")
 async def google_callback(code: str, response: Response, db: Session = Depends(get_db)):
     async with httpx.AsyncClient() as client:

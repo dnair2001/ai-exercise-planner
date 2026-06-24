@@ -84,6 +84,7 @@ export default function GoalForm() {
 
     const needs = `Fitness level: ${form.fitnessLevel}. ${form.needs}`.trim();
 
+    // hits the api/plans route
     try {
       const response = await api.createPlanStream({
         goals: form.goals,
